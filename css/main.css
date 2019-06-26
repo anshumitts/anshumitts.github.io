@@ -1,5 +1,6 @@
 div {
     box-sizing: border-box;
+    font-size: 1.25vw;
 }
 
 img {
@@ -8,7 +9,7 @@ img {
 
 #profilepic {
     /* background-color: lightblue; */
-    border: 2px;
+    border: 0.25vw;
     border-color: black;
     border-style: solid;
     color: black;
@@ -29,7 +30,7 @@ img {
     height: 60%;
     width: 100%;
     display: inline-block;
-    padding: 20px;
+    padding: 1vw;
     text-align: right;
 }
 
@@ -47,10 +48,11 @@ img {
 }
 
 #right {
-    border-left: 3px solid black;
+    border-left: 0.25vw solid black;
     /* border-color: black;
     border-style: solid; */
-    padding: 20px;
+    padding: 1.5vw;
+    padding-top: 0px;
     float: right;
     width: 74%;
     height: 95%;
@@ -60,7 +62,7 @@ img {
     /* align-items: center; */
     margin: auto auto auto auto;
     width: 80vw;
-    height: 95vh;
+    height: 45vw;
 }
 
 p:hover {
@@ -69,28 +71,22 @@ p:hover {
 
 #link {
     font-weight: bold;
+    font-size: 1.2vw;
 }
 
 #logo {
-    width: 30px;
-    height: 30px;
+    width: 3vw;
+    height: 3vw;
 }
 
 #contact_info {
-    font-size: 12px;
+    font-size: 1vw;
     width: 100%;
     text-align: center;
 }
 
 #aboutme {
     text-align: justify;
-}
-
-#middle {
-    margin: 0 20px;
-    background-color: black;
-    width: 3px;
-    height: 95%;
 }
 
 #title {
@@ -106,7 +102,7 @@ p:hover {
 
 li {
     text-align: justify;
-    margin: 10px;
+    margin: 1vw;
 }
 
 #img_logos_organization {
