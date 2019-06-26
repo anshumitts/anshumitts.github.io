@@ -1,6 +1,10 @@
+:root {
+    --mu-size: 1vw;
+}
+
 div {
     box-sizing: border-box;
-    font-size: 1.25vw;
+    font-size: calc(1.25*var(--mu-size));
 }
 
 img {
@@ -9,7 +13,7 @@ img {
 
 #profilepic {
     /* background-color: lightblue; */
-    border: 0.25vw;
+    border: calc(0.25*var(--mu-size));
     border-color: black;
     border-style: solid;
     color: black;
@@ -30,7 +34,7 @@ img {
     height: 60%;
     width: 100%;
     display: inline-block;
-    padding: 1vw;
+    padding: calc(1*var(--mu-size));
     text-align: right;
 }
 
@@ -48,10 +52,10 @@ img {
 }
 
 #right {
-    border-left: 0.25vw solid black;
+    border-left: calc(0.25*var(--mu-size)) solid black;
     /* border-color: black;
     border-style: solid; */
-    padding: 1.5vw;
+    padding: calc(1.5*var(--mu-size));
     padding-top: 0px;
     float: right;
     width: 74%;
@@ -61,8 +65,8 @@ img {
 .body {
     /* align-items: center; */
     margin: auto auto auto auto;
-    width: 80vw;
-    height: 45vw;
+    width: calc(80*var(--mu-size));
+    height: calc(45*var(--mu-size));
 }
 
 p:hover {
@@ -71,20 +75,20 @@ p:hover {
 
 #link {
     font-weight: bold;
-    font-size: 1.2vw;
+    font-size: calc(1.2*var(--mu-size));
 }
 
 #logo {
-    width: 3vw;
-    height: 3vw;
+    width: calc(3*var(--mu-size));
+    height: calc(3*var(--mu-size));
 }
 
 #contact_info {
-    padding: 0.1vw;
-    font-size: 1vw;
+    padding: calc(0.1*var(--mu-size));
+    font-size: calc(1*var(--mu-size));
     width: 90%;
     text-align: center;
-    font-size: 1vw;
+    font-size: calc(1*var(--mu-size));
     float: right;
 }
 
@@ -105,7 +109,7 @@ p:hover {
 
 li {
     text-align: justify;
-    margin: 1vw;
+    margin: calc(1*var(--mu-size));
 }
 
 #img_logos_organization {
