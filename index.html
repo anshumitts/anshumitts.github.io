@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,22 +16,30 @@
     <div class='body'>
         <div class="content" id="left">
             <div class="profile_pic">
-                <img src="https://avatars2.githubusercontent.com/u/16190005?s=400&u=b0" alt="me@anshulmittal.org"
-                    id="profilepic">
+                <img src="https://avatars2.githubusercontent.com/u/16190005?s=400&u=b0" alt="me@anshulmittal.org" id="profilepic">
             </div>
             <div class="nav">
                 <div>
-                    <a id="1" data="./html/aboutme.html" onclick="load(this);"> About me</a> </br>
-                    <a id="2" data="./html/publication.html" onclick="load(this);"> Publication</a>
+                    <p id="link" data="./html/aboutme.html" onclick="load(this);"> About me</p>
+                    <p id="link" data="./html/publication.html" onclick="load(this);"> Publications</p>
+                    <div class="markers">
+                        <p>
+                            <a href="https://github.com/anshumitts/"><img id="logo" src="./img/GitHub-Mark-120px-plus.png"></a>
+                            <a href="https://www.linkedin.com/in/anshumitts/"><img id="logo" src="./img/linkedin.jpeg"></a>
+                            <a href="https://scholar.google.co.in/citations?user=8TDNQMQAAAAJ&hl=en"><img id="logo" src="./img/google-scholar-icon-1.png"></a>
+                        </p>
+                        <fieldset id="contact_info">
+                            <legend>Contact info:</legend>
+                            email:<a href="mailto:me@anshumittal.org">me@anshulmittal.org</a>
+                        </fieldset>
+                        <!-- <a href="https://twitter.com/anshumitts"><img id="logo" src="https://www.freepik.com/free-icon/twitter-logo_748486.htm"></a> -->
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="content" id="right" data="./html/aboutme.html">
-            <!-- <div w3-include-html="html/aboutme.html">
-                <script>
-                    w3IncludeHTML();
-                //</script>
-            </div> -->
+        <div class="content" id="middle">
+        </div>
+        <div class="content" id="right">
         </div>
     </div>
 
