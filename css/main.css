@@ -1,0 +1,22 @@
+#profilepic {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  /* width: 100%;
+  height: ; */
+} 
+
+.content {
+    border: 1px;
+    border-color: red;
+}
+
+#left {
+width: 0.4vw;
+height: 0.95vh;
+}
+
+#right{
+    width: 0.6vw;
+    height: 0.95vh;
+}
