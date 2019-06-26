@@ -1,45 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Anshul Mittal</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
-    <!-- <script src='js/main.js'></script> -->
+    <script src="js/min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
+
 <body>
     <div class='body'>
         <div class="content" id="left">
             <div class="profile_pic">
-                <img src="https://avatars2.githubusercontent.com/u/16190005?s=400&u=b0" alt ="me@anshulmittal.org" id="profilepic">
+                <img src="https://avatars2.githubusercontent.com/u/16190005?s=400&u=b0" alt="me@anshulmittal.org"
+                    id="profilepic">
             </div>
             <div class="nav">
                 <div>
-                    <a href="#aboutme"> About me</a>
+                    <a id="1" data="./html/aboutme.html" onclick="load(this);"> About me</a> </br>
+                    <a id="2" data="./html/publication.html" onclick="load(this);"> Publication</a>
                 </div>
             </div>
         </div>
-        <div class="content" id="right">
-            <h1 class="Name">
-                Anshul Mittal
-            </h1>
-            <div id="aboutme">
-                <h3>
-                    About me
-                </h3>
-                <p id="aboutmetext">
-                    I am a final year MS(R) student at School of Information Technology at Indian Institute of Technology Delhi (IITD). I am workin with <a href=""> Dr. Manik Varma</a> and <a href=""> Dr. Sumeet Agarwal</a> on problems pertaining to extreme mutillabels classification.
-                </p>
-                <h3>
-                    More information
-                </h3>
-                <p>
-                    Prior to joining IITD, I worked at <a href=""> EXL Analytics </a> as consultant for some major e-retail companies. I graduated as a Civil Engineer with Minor specialization in Computer Science from Indian Institute of Technology Roorkee. There I have worked on problems related to Intelligent Transportation Systems with <a href=""> Dr. Indraji Ghosh</a>, Computer Vision Applications in Remote Sensing, Scene Text segmentation, Action Recognition with <a href=""> Dr. Partha Pratim Roy</a> and <a href=""> Dr. R. Balasubramanian</a>. For more details refer to my <a href=""> Linked.in</a> profile and <a href="">CV</a>.
-                </p>
-            </div>
+        <div class="content" id="right" data="./html/aboutme.html">
+            <!-- <div w3-include-html="html/aboutme.html">
+                <script>
+                    w3IncludeHTML();
+                //</script>
+            </div> -->
         </div>
     </div>
-    
+
 </body>
+
 </html>
