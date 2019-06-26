@@ -80,9 +80,12 @@ p:hover {
 }
 
 #contact_info {
+    padding: 0.1vw;
     font-size: 1vw;
-    width: 100%;
+    width: 90%;
     text-align: center;
+    font-size: 1vw;
+    float: right;
 }
 
 #aboutme {
