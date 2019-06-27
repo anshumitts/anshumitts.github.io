@@ -49,7 +49,7 @@ img {
 #left {
     float: left;
     width: 24%;
-    height: 95%;
+    height: 100%;
 }
 
 #right {
@@ -60,18 +60,15 @@ img {
     padding-top: 0px;
     float: right;
     width: 74%;
-    height: 95%;
+    height: 100%;
 }
 
 .body {
     /* align-items: center; */
     margin: auto auto auto auto;
     width: calc(80*var(--mu-size));
-    height: calc(47*var(--mu-size));
-}
-
-p {
-    /* cursor: pointer; */
+    height: 100%;
+    height: calc(45*var(--mu-size));
 }
 
 #link,
