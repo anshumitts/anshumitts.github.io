@@ -20,13 +20,17 @@ img {
     /* padding: 5px; */
     /* width: 100%; */
     position: relative;
-    width: 100%;
+    /* width: 100%; */
+    height: 100%;
 }
 
 .profile_pic {
     display: inline-block;
+    /* border: 1px;
+    border-color: red;
+    border-style: dotted; */
     width: 100%;
-    height: 35%;
+    height: 30%;
     text-align: right;
 }
 
@@ -63,16 +67,19 @@ img {
     /* align-items: center; */
     margin: auto auto auto auto;
     width: calc(80*var(--mu-size));
-    height: calc(45*var(--mu-size));
+    height: calc(47*var(--mu-size));
 }
 
 p:hover {
     cursor: pointer;
 }
 
-#link {
+#link,
+:focus {
     font-weight: bold;
     font-size: calc(1.2*var(--mu-size));
+    text-decoration: None;
+    color: black;
 }
 
 #logo {
@@ -118,8 +125,5 @@ li {
     display: inline-block;
     margin: 0 auto;
     width: 100%;
-    /* border: 1px;
-    border-color: red;
-    border-style: dotted; */
     text-align: center;
 }
