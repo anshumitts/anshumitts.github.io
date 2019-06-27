@@ -70,12 +70,13 @@ img {
     height: calc(47*var(--mu-size));
 }
 
-p:hover {
-    cursor: pointer;
+p {
+    /* cursor: pointer; */
 }
 
 #link,
 :focus {
+    cursor: pointer;
     font-weight: bold;
     font-size: calc(1.2*var(--mu-size));
     text-decoration: None;
@@ -88,9 +89,10 @@ p:hover {
 }
 
 #contact_info {
+    font-weight: normal;
     padding: calc(0.1*var(--mu-size));
     font-size: calc(1*var(--mu-size));
-    width: 90%;
+    width: 100%;
     text-align: center;
     font-size: calc(1*var(--mu-size));
     float: right;
@@ -126,4 +128,11 @@ li {
     margin: 0 auto;
     width: 100%;
     text-align: center;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    font-size: calc(1.2*var(--mu-size));
+    text-decoration: black;
 }
