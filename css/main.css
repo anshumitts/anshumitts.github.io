@@ -115,17 +115,18 @@ li {
     margin: calc(1*var(--mu-size));
 }
 
-#img_logos_organization {
+.img_logos_organization {
     display: inline-flex;
     border-style: solid;
-    width: calc(0.05*var(--mu-size));
 }
 
-#square {
+.square {
+    width: calc(0.05*var(--mu-size));
     height: calc(0.05*var(--mu-size));
 }
 
-#rectangle {
+.rectangle {
+    width: calc(0.05*var(--mu-size));
     height: calc(0.025*var(--mu-size));
 }
 
