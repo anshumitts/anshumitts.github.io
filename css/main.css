@@ -115,18 +115,18 @@ li {
     margin: calc(1*var(--mu-size));
 }
 
-#img_logos_organization_square {
-    margin: 1 auto;
-    border: black;
-    border-width: 1px;
-    width: 10%;
+#img_logos_organization {
+    display: inline-flex;
+    border-style: solid;
+    width: calc(0.05*var(--mu-size));
 }
 
-#img_logos_organization_rectangle {
-    margin: 1 auto;
-    border: black;
-    border-width: 1px;
-    width: 10%;
+#square {
+    height: calc(0.05*var(--mu-size));
+}
+
+#rectangle {
+    height: calc(0.025*var(--mu-size));
 }
 
 #org_logos {
