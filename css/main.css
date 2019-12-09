@@ -117,11 +117,15 @@ li {
 
 #img_logos_organization_square {
     margin: 1 auto;
+    border: black;
+    border-width: 1px;
     width: 10%;
 }
 
 #img_logos_organization_rectangle {
     margin: 1 auto;
+    border: black;
+    border-width: 1px;
     width: 10%;
 }
 
