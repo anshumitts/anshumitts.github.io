@@ -117,17 +117,17 @@ li {
 
 .img_logos_organization {
     display: inline-flex;
-    border-style: solid;
+    /* border-style: solid; */
 }
 
 .square {
-    width: calc(0.05*var(--mu-size));
-    height: calc(0.05*var(--mu-size));
+    width: calc(8*var(--mu-size));
+    height: calc(8*var(--mu-size));
 }
 
 .rectangle {
-    width: calc(0.05*var(--mu-size));
-    height: calc(0.025*var(--mu-size));
+    width: calc(15*var(--mu-size));
+    height: calc(8*var(--mu-size));
 }
 
 #org_logos {
