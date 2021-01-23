@@ -17,10 +17,7 @@ img {
     border-color: black;
     border-style: solid;
     color: black;
-    /* padding: 5px; */
-    /* width: 100%; */
     position: relative;
-    /* width: 100%; */
     height: 100%;
 }
 
@@ -99,14 +96,15 @@ img {
     text-align: justify;
 }
 
-#title {
-    display: inline;
-    font-style: italic;
-}
-
 #authors,
 #me,
+#when,
+#title {
+    display: inline;
+}
+
 #where {
+    font-style: italic;
     display: inline;
 }
 
@@ -142,4 +140,25 @@ a {
     font-weight: bold;
     font-size: calc(1.2*var(--mu-size));
     text-decoration: black;
+}
+
+li {
+    list-style-type: "-  ";
+    margin: 1px;
+    padding: 0px;
+}
+
+li.recent {
+    background: #6dc72c
+}
+
+.news {
+    margin: auto;
+    /* float: center; */
+    align-items: center;
+    border: 1px dashed black;
+    border-radius: 25px;
+    padding-left: calc(1*var(--mu-size));
+    padding-right: calc(3*var(--mu-size));
+    width: calc(35*var(--mu-size));
 }
