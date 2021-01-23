@@ -118,6 +118,11 @@ li {
     /* border-style: solid; */
 }
 
+.paper {
+    margin-bottom: 5px;
+    border-bottom: 2px dashed black;
+}
+
 .square {
     width: calc(8*var(--mu-size));
     height: calc(8*var(--mu-size));
@@ -154,7 +159,6 @@ li.recent {
 
 .news {
     margin: auto;
-    /* float: center; */
     align-items: center;
     border: 1px dashed black;
     border-radius: 25px;
