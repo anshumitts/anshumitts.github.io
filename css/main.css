@@ -68,6 +68,15 @@ img {
     height: calc(45*var(--mu-size));
 }
 
+.github{
+    background-color: lightgray;
+    border: 1px solid black;
+    clear: both;
+    display: inline;
+    padding: 2px;
+    border-radius: 25px;
+}
+
 #link,
 :focus {
     cursor: pointer;
@@ -91,6 +100,12 @@ img {
     font-size: calc(1*var(--mu-size));
     float: right;
 }
+
+
+.counter {
+    position:absolute;                  
+    bottom:0;                          
+ }
 
 #aboutme {
     text-align: justify;
@@ -119,8 +134,9 @@ li {
 }
 
 .paper {
-    margin-bottom: 5px;
-    border-bottom: 2px dashed black;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed black;
 }
 
 .square {
