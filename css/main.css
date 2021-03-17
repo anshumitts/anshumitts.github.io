@@ -111,16 +111,25 @@ img {
     text-align: justify;
 }
 
-#authors,
 #me,
-#when,
-#title {
+#authors,
+#when{
     display: inline;
 }
 
+#when{
+    font-size: medium;
+}
+
+#title {
+    font-size: larger;
+    display: inline-block;
+}
+
 #where {
-    font-style: italic;
+    /* font-style: italic; */
     display: inline;
+    font-size: medium;
 }
 
 li {
