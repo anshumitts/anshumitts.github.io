@@ -49,7 +49,7 @@ a {
 .link:hover, .github:hover {
     color: rgb(255, 255, 255);
     background-color: gray;
-    border: 1px solid gray;
+    border: var(--very-tiny) solid gray;
 }
 
 .github {
