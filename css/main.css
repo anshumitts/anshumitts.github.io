@@ -1,7 +1,7 @@
 :root {
     --mu-size: 1vw;
     --content-left-width: calc(15*var(--mu-size));
-    --content-right-width: calc(63.5*var(--mu-size));
+    --content-right-width: calc(60*var(--mu-size));
     --logo-square: calc(8*var(--mu-size));
     --logo-retangle: calc(15*var(--mu-size));
     --very-huge: calc(3*var(--mu-size));
@@ -12,10 +12,18 @@
     --very-small: calc(0.75*var(--mu-size));
     --tiny: calc(0.25*var(--mu-size));
     --very-tiny: calc(0.1*var(--mu-size));
+    --content-width: calc(var(--content-left-width) + var(--content-right-width) + var(--large));
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 div {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     font-size: var(--normal);
 }
 
@@ -71,12 +79,6 @@ a {
     display: inline-block;
 }
 
-.body {
-    margin: auto;
-    width: calc(80*var(--mu-size));
-    height: calc(45*var(--mu-size));
-}
-
 .img_logos_organization {
     display: inline-flex;
 }
@@ -104,7 +106,7 @@ a {
     font-weight: bold;
 }
 
-ul.news{
+ul.news {
     padding: 0px;
     margin: var(--small);
 }
@@ -147,30 +149,53 @@ li.recentnews {
     border-radius: var(--large);
 }
 
+#body {
+    margin: auto;
+    margin-top: var(--huge);
+    position: relative;
+    width: var(--content-width);
+    height: auto;
+    padding: 0px;
+}
+
 #left {
     float: left;
+    position: relative;
     width: var(--content-left-width);
-    height: 100%;
+    height: auto;
+    margin: 0px;
+    padding-right: var(--large);
 }
 
 #right {
-    border-left: var(--tiny) solid black;
-    padding: var(--large);
-    padding-top: 0px;
-    float: right;
+    position: relative;
+    border-left: var(--very-tiny) dashed black;
+    padding: 0px;
+    padding-left: var(--large);
     width: var(--content-right-width);
     height: auto;
+    margin: 0px;
+}
+
+#bottom {
+    clear: both;
+    width: 100%;
+    height: auto;
+    border-top: var(--very-tiny) dashed rgb(8, 8, 8);
+    margin: 0px;
+    padding: 0px;
 }
 
 #contact_info {
     font-weight: normal;
-    padding: var(--very-tiny);
+    padding: 0px;
     font-size: var(--small);
     width: 100%;
     text-align: center;
+    margin: 0px;
     font-size: var(--small);
-    float: right;
     border: var(--very-tiny) solid black;
+    border-radius: var(--small);
 }
 
 #aboutme {
