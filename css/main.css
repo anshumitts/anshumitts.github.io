@@ -177,7 +177,7 @@ li.newsitem, li.recentnews {
     list-style-type: "-  ";
     margin: calc(0.25*var(--mu-size));;
     padding: 0px;
-    font-size: calc(1*var(--mu-size));
+    font-size: calc(1.1*var(--mu-size));
     
 }
 
@@ -188,10 +188,12 @@ li.recentnews{
 
 .news {
     margin: auto;
+    margin-top: calc(1*var(--mu-size));
     align-items: center;
     border: calc(0.1*var(--mu-size)) dashed black;
     border-radius: calc(1*var(--mu-size));
     padding-left: calc(1*var(--mu-size));
     padding-right: calc(2*var(--mu-size));
+    padding-top: 0px;
     width: fit-content;
 }
