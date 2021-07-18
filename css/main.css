@@ -42,7 +42,7 @@ a {
     padding-right: var(--tiny);
     margin-top: var(--tiny);
     margin-bottom: var(--tiny);
-    border-radius: calc(10*var(--mu-size));
+    border-radius: var(--very-huge);
     text-align: center;
 }
 
