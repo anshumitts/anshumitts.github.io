@@ -4,31 +4,54 @@
 
 div {
     box-sizing: border-box;
-    font-size: calc(1.25*var(--mu-size));
+    font-size: calc(1.3*var(--mu-size));
 }
 
 img {
     box-sizing: border-box;
+    width: 100%;
+}
+
+#text_urls {
+    cursor: pointer;
+    display: inline-table;
+    position: relative;
+    font-weight: bold;
+}
+#text_urls:hover{
+    text-decoration: underline;
+}
+
+#link, .github {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: calc(1.2*var(--mu-size));
+    color: rgb(5, 5, 5);
+    background-color: lightgray;
+    border: 1px dotted black;
+    padding: calc(0.25*var(--mu-size));
+    margin-top: calc(0.75*var(--mu-size));
+    margin-bottom: calc(0.75*var(--mu-size));
+    border-radius: calc(10*var(--mu-size));
+    text-align: center;
+}
+
+#link:hover, .github:hover {
+    color: rgb(255, 255, 255);
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+.github{
+    display: inline;
+    position: relative;
 }
 
 #profilepic {
     /* background-color: lightblue; */
-    border: calc(0.25*var(--mu-size));
-    border-color: black;
-    border-style: solid;
     color: black;
     position: relative;
-    height: 100%;
-}
-
-.profile_pic {
-    display: inline-block;
-    /* border: 1px;
-    border-color: red;
-    border-style: dotted; */
-    width: 100%;
-    height: 30%;
-    text-align: right;
+    height: auto;
 }
 
 .nav {
@@ -37,6 +60,7 @@ img {
     display: inline-block;
     padding: calc(1*var(--mu-size));
     text-align: right;
+    padding: 0px;
 }
 
 .content {
@@ -64,31 +88,17 @@ img {
     /* align-items: center; */
     margin: auto auto auto auto;
     width: calc(80*var(--mu-size));
-    height: 100%;
     height: calc(45*var(--mu-size));
-}
-
-.github{
-    background-color: lightgray;
-    border: 1px solid black;
-    clear: both;
-    display: inline;
-    padding: 2px;
-    border-radius: 25px;
-}
-
-#link,
-:focus {
-    cursor: pointer;
-    font-weight: bold;
-    font-size: calc(1.2*var(--mu-size));
-    text-decoration: None;
-    color: black;
 }
 
 #logo {
     width: calc(3*var(--mu-size));
-    height: calc(3*var(--mu-size));
+    height: auto;
+}
+
+#logo:hover {
+    border: solid rgb(26, 26, 26) calc(0.2*var(--mu-size));
+    border-radius: calc(3*var(--mu-size));
 }
 
 #contact_info {
@@ -101,46 +111,35 @@ img {
     float: right;
 }
 
-
-.counter {
-    position:absolute;                  
-    bottom:0;                          
- }
-
 #aboutme {
     text-align: justify;
 }
 
-#me,
-#authors,
-#when{
+#me, #me:hover {
+    cursor: pointer;
+    font-weight: bolder;
     font-size: medium;
     display: inline;
+    font-size: calc(1.2*var(--mu-size));
 }
 
-#when{
-    font-size: medium;
+#authors{
+    font-size: calc(1.2*var(--mu-size));
+    display: inline;
 }
 
 #title {
-    font-size: large;
+    font-size: calc(1.4*var(--mu-size));
     display: inline-block;
 }
 
-#where {
-    /* font-style: italic; */
+#where,#when {
     display: inline;
-    font-size: medium;
-}
-
-li {
-    text-align: justify;
-    margin: calc(1*var(--mu-size));
+    font-size: calc(1.1*var(--mu-size));
 }
 
 .img_logos_organization {
     display: inline-flex;
-    /* border-style: solid; */
 }
 
 .paper {
@@ -161,7 +160,7 @@ li {
 
 #org_logos {
     display: inline-block;
-    margin: 0 auto;
+    margin: 0;
     width: 100%;
     text-align: center;
 }
@@ -173,22 +172,26 @@ a {
     text-decoration: black;
 }
 
-li {
+
+li.newsitem, li.recentnews {
     list-style-type: "-  ";
-    margin: 1px;
+    margin: calc(0.25*var(--mu-size));;
     padding: 0px;
+    font-size: calc(1*var(--mu-size));
+    
 }
 
-li.recent {
-    background: #6dc72c
+li.recentnews{
+    background: lightsteelblue;
+    width: fit-content;
 }
 
 .news {
     margin: auto;
     align-items: center;
-    border: 1px dashed black;
-    border-radius: 25px;
+    border: calc(0.1*var(--mu-size)) dashed black;
+    border-radius: calc(1*var(--mu-size));
     padding-left: calc(1*var(--mu-size));
-    padding-right: calc(3*var(--mu-size));
-    width: calc(35*var(--mu-size));
+    padding-right: calc(2*var(--mu-size));
+    width: fit-content;
 }
