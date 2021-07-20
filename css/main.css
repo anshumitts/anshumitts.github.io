@@ -12,7 +12,8 @@
     --very-small: calc(0.75*var(--mu-size));
     --tiny: calc(0.25*var(--mu-size));
     --very-tiny: calc(0.1*var(--mu-size));
-    --content-width: calc(var(--content-left-width) + var(--content-right-width) + var(--large));
+    --content-width: calc(var(--content-left-width) + var(--content-right-width));
+    --top-div-height : calc(1.4*var(--mu-size));
 }
 
 html {
@@ -30,6 +31,12 @@ div {
 img {
     box-sizing: border-box;
     width: 100%;
+    max-height: 100%;
+    border-radius: 100%;
+    object-fit: contain;
+    height: auto;
+    display: block;
+    position: absolute;
 }
 
 a {
@@ -37,6 +44,10 @@ a {
     font-weight: bold;
     font-size: var(--normal);
     text-decoration: black;
+}
+
+body{
+    margin-top: 0px;
 }
 
 .link, .github {
@@ -75,38 +86,60 @@ a {
     padding: 0px;
 }
 
+.mainstage {
+    padding-left: var(--small);
+    margin: 0px;
+}
+
+.pagetitle {
+    font-size: var(--huge);
+    font-weight: bold;
+    margin-bottom: var(--tiny);
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--top-div-height);
+    display: block;
+    margin-bottom: var(--very-small);
+    clear: both;
+}
+
+.pagecontent {
+    flex-grow: 1;
+    overflow: auto;
+}
+
 .content {
     display: inline-block;
 }
 
 .img_logos_organization {
-    margin: var(--very-tiny);
-    margin-top: var(--very-small);
     display: inline-flex;
+    position: relative;
+    margin-top: var(--very-small);
+    text-align: center;
+    justify-content: center;
+    height: var(--logo-square);
 }
 
-.paper {
-    margin-bottom: var(--small);
-    padding-bottom: var(--very-small);
-    border-bottom: var(--very-tiny) dashed black;
+.img_logos_organization:hover {
+    border: var(--tiny) solid black;
+    border-radius: var(--logo-square);
 }
 
 .square {
     width: var(--logo-square);
-    height: var(--logo-square);
 }
 
 .rectangle {
     width: var(--logo-retangle);
-    height: var(--logo-square);
 }
 
-#text_urls {
-    cursor: pointer;
-    display: inline-table;
-    position: relative;
-    font-weight: bold;
+.paper {
+    margin-bottom: var(--very-small);
+    padding-bottom: var(--tiny);
+    border-bottom: var(--very-tiny) dashed black;
 }
+
 
 ul.news {
     padding: 0px;
@@ -129,10 +162,19 @@ li.recentnews {
     width: var(--very-huge);
     border-radius: var(--very-huge);
     height: auto;
+    position: relative;
+    display: inline-block;
 }
 
 .logo:hover {
     border: solid rgb(26, 26, 26) var(--very-tiny);
+}
+
+#text_urls {
+    cursor: pointer;
+    display: inline-table;
+    position: relative;
+    font-weight: bold;
 }
 
 #text_urls:hover {
@@ -140,51 +182,62 @@ li.recentnews {
 }
 
 #org_logos {
-    margin: auto;
+    justify-content: center;
     text-align: center;
+    padding-bottom: var(--very-small);
 }
 
 #profilepic {
     color: black;
     position: relative;
     height: auto;
+    width: 100%;
     border-radius: var(--large);
 }
 
 #body {
     margin: auto;
-    margin-top: var(--huge);
     position: relative;
     width: var(--content-width);
     height: auto;
     padding: 0px;
 }
 
+#top {
+    position: fixed;
+    width: var(--content-width);
+    height: var(--top-div-height);
+    background-color: rgb(255, 255, 255);
+    margin: 0px;
+    display: block;
+    clear: both;
+    padding: var(--very-tiny);
+    z-index: 100;
+}
+
 #left {
-    float: left;
-    position: relative;
+    position: fixed;
     width: var(--content-left-width);
+    top: var(--top-div-height);
     height: auto;
     margin: 0px;
-    padding-right: var(--large);
+    padding-right: var(--small);
 }
 
 #right {
     position: relative;
+    top: var(--top-div-height);
     border-left: var(--very-tiny) dashed black;
-    padding: 0px;
-    padding-left: var(--large);
     width: var(--content-right-width);
     height: auto;
+    float: right;
     margin: 0px;
 }
 
 #bottom {
-    clear: both;
-    width: 100%;
-    height: auto;
+    width: var(--content-width);
     border-top: var(--very-tiny) dashed rgb(8, 8, 8);
-    margin: 0px;
+    margin-top: var(--top-div-height);
     padding: 0px;
 }
 
