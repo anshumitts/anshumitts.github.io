@@ -2,8 +2,8 @@
     --mu-size: 1vw;
     --content-left-width: calc(15*var(--mu-size));
     --content-right-width: calc(60*var(--mu-size));
-    --logo-square: calc(8*var(--mu-size));
-    --logo-retangle: calc(15*var(--mu-size));
+    --logo-square: calc(5*var(--mu-size));
+    --logo-retangle: calc(9*var(--mu-size));
     --very-huge: calc(3*var(--mu-size));
     --huge: calc(2*var(--mu-size));
     --large: calc(1.4*var(--mu-size));
@@ -46,8 +46,8 @@ a {
     color: rgb(5, 5, 5);
     background-color: lightgray;
     border: var(--very-tiny) solid black;
-    padding-left: var(--tiny);
-    padding-right: var(--tiny);
+    padding-left: var(--very-tiny);
+    padding-right: var(--very-tiny);
     margin-top: var(--tiny);
     margin-bottom: var(--tiny);
     border-radius: var(--very-huge);
@@ -61,8 +61,8 @@ a {
 }
 
 .github {
-    padding-left: var(--very-small);
-    padding-right: var(--very-small);
+    padding-left: var(--tiny);
+    padding-right: var(--tiny);
     margin-top: var(--tiny);
     margin-bottom: 0px;
     display: inline-block;
@@ -80,6 +80,8 @@ a {
 }
 
 .img_logos_organization {
+    margin: var(--very-tiny);
+    margin-top: var(--very-small);
     display: inline-flex;
 }
 
