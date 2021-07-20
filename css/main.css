@@ -13,7 +13,7 @@
     --tiny: calc(0.25*var(--mu-size));
     --very-tiny: calc(0.1*var(--mu-size));
     --content-width: calc(var(--content-left-width) + var(--content-right-width));
-    --top-div-height : calc(1.4*var(--mu-size));
+    --top-div-height : calc(2*var(--mu-size));
 }
 
 html {
