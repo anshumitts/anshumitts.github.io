@@ -85,6 +85,13 @@ body{
     text-align: right;
     padding: 0px;
 }
+.in_nav_link, .ot_nav_link{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    padding: 0px;
+    margin: var(--very-tiny);
+}
 
 .mainstage {
     padding-left: var(--small);
