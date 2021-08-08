@@ -24,3 +24,15 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        console.log("setup");
+        $('.in_nav_link').on('click',function(){
+            var aID = $(this).attr('href');
+            console.log(aID);
+            $("#right").load(aID);
+            return false
+        });
+    });
+</script>
