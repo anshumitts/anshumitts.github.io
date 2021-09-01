@@ -1,7 +1,8 @@
 :root {
     --mu-size: 1vw;
     --content-left-width: calc(15*var(--mu-size));
-    --content-right-width: calc(60*var(--mu-size));
+    --content-center-width: calc(45*var(--mu-size));
+    --content-right-width: calc(15*var(--mu-size));
     --logo-square: calc(5*var(--mu-size));
     --logo-retangle: calc(9*var(--mu-size));
     --very-huge: calc(3*var(--mu-size));
@@ -12,7 +13,9 @@
     --very-small: calc(0.75*var(--mu-size));
     --tiny: calc(0.25*var(--mu-size));
     --very-tiny: calc(0.1*var(--mu-size));
-    --content-width: calc(var(--content-left-width) + var(--content-right-width));
+    --content-width: calc(var(--content-left-width) +
+                          var(--content-right-width) +
+                          var(--content-center-width));
     --top-div-height : calc(2*var(--mu-size));
 }
 
@@ -101,22 +104,17 @@ body{
 .pagetitle {
     font-size: var(--huge);
     font-weight: bold;
-    margin-bottom: var(--tiny);
     position: -webkit-sticky;
     position: sticky;
     top: var(--top-div-height);
-    display: block;
     margin-bottom: var(--very-small);
-    clear: both;
+    background-color: white;
+    width: 100%;
 }
 
 .pagecontent {
-    flex-grow: 1;
+    flex-grow: 2;
     overflow: auto;
-}
-
-.content {
-    display: inline-block;
 }
 
 .img_logos_organization {
@@ -155,8 +153,7 @@ ul.news {
 
 li.newsitem, li.recentnews {
     list-style-type: "- ";
-    margin: var(--tiny);
-    padding: 0px;
+    margin: 0;
     font-size: var(--small);
 }
 
@@ -188,6 +185,10 @@ li.recentnews {
     text-decoration: underline;
 }
 
+.markers{
+    margin: 0 auto;
+    align-content: center;
+}
 #org_logos {
     justify-content: center;
     text-align: center;
@@ -210,42 +211,57 @@ li.recentnews {
     padding: 0px;
 }
 
+.content {
+    display: inline-block;
+    /* border: 1px solid black; */
+    margin: 0px;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: auto;
+    vertical-align: top;
+}
+
 #top {
     position: fixed;
     width: var(--content-width);
     height: var(--top-div-height);
     background-color: rgb(255, 255, 255);
-    margin: 0px;
     display: block;
     clear: both;
-    padding: var(--very-tiny);
     z-index: 100;
 }
 
 #left {
     position: fixed;
+    margin-top: var(--top-div-height);
     width: var(--content-left-width);
-    top: var(--top-div-height);
-    height: auto;
-    margin: 0px;
     padding-right: var(--small);
+    justify-content: center;
 }
 
 #right {
-    position: relative;
-    top: var(--top-div-height);
-    border-left: var(--very-tiny) dashed black;
+    position: fixed;
+    align-items: center;
+    margin-top: var(--top-div-height);
     width: var(--content-right-width);
-    height: auto;
-    float: right;
-    margin: 0px;
+}
+
+#center {
+    position: relative;
+    margin-top: var(--top-div-height);
+    margin-left: var(--content-left-width);
+    border-left: var(--very-tiny) dashed black;
+    width: var(--content-center-width);
+    padding-right: var(--small);
+    border-right: var(--very-tiny) dashed black;
 }
 
 #bottom {
     width: var(--content-width);
     border-top: var(--very-tiny) dashed rgb(8, 8, 8);
     margin-top: var(--top-div-height);
-    padding: 0px;
 }
 
 #contact_info {
@@ -293,12 +309,13 @@ li.recentnews {
 
 #news {
     margin: auto;
-    margin-top: var(--very-small);
     padding-top: var(--very-small);
-    align-items: center;
-    border: var(--very-tiny) dashed black;
-    border-radius: var(--mu-size);
-    padding-left: var(--mu-size);
+    align-items: left;
     font-size: var(--large);
     width: fit-content;
+}
+
+.codes {
+    margin: auto;
+    padding-left: var(--normal);
 }

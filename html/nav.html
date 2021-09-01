@@ -8,7 +8,6 @@
         <a class="link ot_nav_link" href="./docs/Resume_Anshul_Mittal.pdf" target="_blank"> CV </a>
         <!-- <a id="link" href="http://hobbies.anshulmittal.org"> Hobbies </a> -->
         <div class="markers">
-            <div>
                 <a href="https://github.com/anshumitts/" target="_blank"><img class="logo"
                         src="./img/GitHub-Mark-120px-plus.png"></a>
                 <a href="https://scholar.google.co.in/citations?user=8TDNQMQAAAAJ&hl=en" target="_blank"><img
@@ -16,12 +15,11 @@
                 <a href="https://www.linkedin.com/in/anshumitts/" target="_blank"><img class="logo"
                         src="./img/linkedin.jpeg"></a>
                 <a href="mailto:me@anshumittal.org" target="_blank"><img class="logo" src="./img/email.png"></a>
-            </div>
-            <fieldset id="contact_info">
-                <legend>Contact details:</legend>
-                <a href="mailto:me@anshumittal.org"> me@anshulmittal.org</a>
-            </fieldset>
         </div>
+        <fieldset id="contact_info">
+            <legend>Contact details:</legend>
+            <a href="mailto:me@anshumittal.org"> me@anshulmittal.org</a>
+        </fieldset>
     </div>
 </div>
 
@@ -31,7 +29,7 @@
         $('.in_nav_link').on('click',function(){
             var aID = $(this).attr('href');
             console.log(aID);
-            $("#right").load(aID);
+            $("#center").load(aID);
             return false
         });
     });

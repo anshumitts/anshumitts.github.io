@@ -1,4 +1,5 @@
 $(window).on('load', function () {
-    $("#right").load('./html/aboutme.html');
+    $("#center").load('./html/aboutme.html');
+    $("#right").load('./html/news.html');
     $("#left").load('./html/nav.html');
 });
