@@ -7,8 +7,14 @@
     <title>Anshul Mittal</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
-    <script src="./js/min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            $("#center").load('./html/aboutme.html');
+            $("#right").load('./html/news.html');
+            $("#left").load('./html/nav.html');
+        });        
+    </script>
 </head>
 
 <body>

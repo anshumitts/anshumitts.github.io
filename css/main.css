@@ -317,5 +317,55 @@ li.recentnews {
 
 .codes {
     margin: auto;
-    padding-left: var(--normal);
+}
+
+.github-button {
+    margin-left: var(--normal);
+    font-size: var(--normal);
+    background-color: #000000;
+    color: azure;
+    margin: var(--tiny);
+    height: fit-content;
+    width: fit-content;
+    align-items: center;
+    border-radius: var(--very-small);
+    padding: var(--very-tiny);
+    border: var(--tiny) solid rgb(0, 0, 0);
+}
+.github-button:hover {
+   
+    background-color: #332e2e;
+    border-color: rgb(57, 124, 224);
+}
+
+#github-name{
+    padding-right: var(--tiny);
+}
+
+#github-action{
+    padding-left: var(--tiny);
+    border-left: var(--very-tiny) dotted white;
+}
+
+#github-icon,#github-star {
+    vertical-align: middle;
+    border-radius: var(--tiny);
+    background-color: rgb(255, 255, 255);
+    height: auto;
+    width: var(--normal);
+    display: inline-table;
+    position: relative;
+}
+
+
+#github-star {
+    vertical-align: top;
+    background-color: rgb(216, 219, 26);
+}
+
+
+#github-repo {
+    background-color: transparent;
+    font-weight: normal;
+    color: white;
 }
