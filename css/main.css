@@ -321,28 +321,28 @@ li.recentnews {
 
 .github-button {
     margin-left: var(--normal);
-    font-size: var(--normal);
+    font-size: var(--small);
     background-color: #000000;
     color: azure;
     margin: var(--tiny);
     height: fit-content;
     width: fit-content;
-    align-items: center;
-    border-radius: var(--very-small);
+    border-radius: var(--tiny);
     padding: var(--very-tiny);
-    border: var(--tiny) solid rgb(0, 0, 0);
+    border: var(--very-tiny) solid rgb(0, 0, 0);
 }
 .github-button:hover {
-   
-    background-color: #332e2e;
-    border-color: rgb(57, 124, 224);
+    border-width:  var(--very-tiny);
+    border-color: rgb(255, 0, 0);
 }
 
 #github-name{
+    font-size: var(--small);
     padding-right: var(--tiny);
 }
 
 #github-action{
+    font-size: var(--small);
     padding-left: var(--tiny);
     border-left: var(--very-tiny) dotted white;
 }
