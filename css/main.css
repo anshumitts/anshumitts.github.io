@@ -96,11 +96,6 @@ body{
     margin: var(--very-tiny);
 }
 
-.mainstage {
-    padding-left: var(--small);
-    margin: 0px;
-}
-
 .pagetitle {
     font-size: var(--huge);
     font-weight: bold;
@@ -124,10 +119,11 @@ body{
     text-align: center;
     justify-content: center;
     height: var(--logo-square);
+    border: var(--very-tiny) solid rgb(255, 255, 255);
 }
 
 .img_logos_organization:hover {
-    border: var(--tiny) solid black;
+    border: var(--very-tiny) solid rgb(255, 0, 0);
     border-radius: var(--logo-square);
 }
 
@@ -168,10 +164,11 @@ li.recentnews {
     height: auto;
     position: relative;
     display: inline-block;
+    vertical-align: center;
 }
 
 .logo:hover {
-    border: solid rgb(26, 26, 26) var(--very-tiny);
+    border: solid rgb(0, 0, 0) var(--very-tiny);
 }
 
 #text_urls {
@@ -255,10 +252,12 @@ li.recentnews {
     border-left: var(--very-tiny) dashed black;
     width: var(--content-center-width);
     padding-right: var(--small);
+    padding-left: var(--small);
     border-right: var(--very-tiny) dashed black;
 }
 
 #bottom {
+    position: relative;
     width: var(--content-width);
     border-top: var(--very-tiny) dashed rgb(8, 8, 8);
     margin-top: var(--top-div-height);
@@ -320,6 +319,8 @@ li.recentnews {
 }
 
 .github-button {
+    display: inline-flex;
+    position: relative;
     margin-left: var(--normal);
     font-size: var(--small);
     background-color: #000000;
@@ -360,7 +361,7 @@ li.recentnews {
 
 #github-star {
     vertical-align: top;
-    background-color: rgb(216, 219, 26);
+    background-color: rgb(255, 255, 255);
 }
 
 

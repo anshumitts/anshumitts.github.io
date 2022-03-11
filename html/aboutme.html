@@ -1,3 +1,29 @@
+<script>
+    
+    $(document).ready(function(){
+        var x = document.querySelectorAll(".github-button");
+        for (var i = 0; i < x.length; i++) {
+            var action = $(x[i]).attr('data-action');
+            var name = $(x[i]).attr('data-text');
+            $.ajax({
+                url : "https://api.github.com/repos/" + $(x[i]).attr('href'),
+                async: false,
+                success : function (resp) {
+                    var template = "<span id='github-name'><img id='github-icon' src='./img/github-icon.png'>" + name + "</span>";
+                    template += "<span id='github-action'>"+ resp["stargazers_count"] +"<img id='github-star' src='./img/star.png'></span>";
+                    template = "<a id='github-repo' href = 'https://github.com/"+$(x[i]).attr('href')+"' target='_blank'>"+template+"</a>";
+                    $(x[i]).html(template);
+                    data = resp["stargazers_count"];
+                    console.log(resp);
+                },
+                error: function () {}
+            });
+        }
+    }
+    );
+    
+</script>
+
 <div class="mainstage">
     <div class="pagetitle">
         Anshul Mittal
@@ -26,6 +52,15 @@
         <br>
         <b>Research interests:</b> machine learning, deep learning, extreme classification, computer vision.
     </div>
+    <br>
+    <div class="codes">
+        <b>Git Repository</b>
+        <br>
+        <div class="github-button" href="kunaldahiya/pyxclib" data-action="stargazers" data-text="PyXCLIB">PyXCLIB</div>
+        <div class="github-button" href="Extreme-classification/deepxml" data-action="stargazers" data-text="DeepXML">DeepXML</div>
+        <div class="github-button" href="Extreme-classification/DECAF" data-action="stargazers" data-text="DECAF">DECAF</div>
+        <div class="github-button" href="Extreme-classification/ECLARE" data-action="stargazers" data-text="ECLARE">ECLARE</div>
+    </div>
     <div id="org_logos">
         <div class="img_logos_organization square">
             <img src="./img/IITR.png" alt="Indian Insititute of Technology Roorkee"
@@ -42,5 +77,5 @@
             <img src="./img/google_phd_fellow.png" alt="Google AI" title="Google AI">
         </div>
     </div>
-</div>
+    
 </div>
