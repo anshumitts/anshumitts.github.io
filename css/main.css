@@ -1,8 +1,8 @@
 :root {
     --mu-size: 1vw;
     --content-left-width: calc(15*var(--mu-size));
-    --content-center-width: calc(45*var(--mu-size));
-    --content-right-width: calc(15*var(--mu-size));
+    --content-center-width: calc(50*var(--mu-size));
+    --content-right-width: calc(25*var(--mu-size));
     --logo-square: calc(5*var(--mu-size));
     --logo-retangle: calc(9*var(--mu-size));
     --very-huge: calc(3*var(--mu-size));
@@ -64,7 +64,7 @@ body{
     padding-right: var(--very-tiny);
     margin-top: var(--tiny);
     margin-bottom: var(--tiny);
-    border-radius: var(--very-huge);
+    border-radius: var(--tiny);
     text-align: center;
 }
 
@@ -80,6 +80,7 @@ body{
     margin-top: var(--tiny);
     margin-bottom: 0px;
     display: inline-block;
+    font-size: var(--small);
 }
 
 .nav {
@@ -197,7 +198,7 @@ li.recentnews {
     position: relative;
     height: auto;
     width: 100%;
-    border-radius: var(--large);
+    border-radius: var(--tiny);
 }
 
 #body {
@@ -292,18 +293,18 @@ li.recentnews {
 }
 
 #authors {
-    font-size: var(--normal);
+    font-size: var(--small);
     display: inline;
 }
 
 #title {
-    font-size: var(--large);
+    font-size: var(--normal);
     display: inline-block;
 }
 
 #where, #when {
     display: inline;
-    font-size: var(--small);
+    font-size: var(--very-small);
 }
 
 #news {
