@@ -1,5 +1,4 @@
 <script>
-    
     $(document).ready(function(){
         var x = document.querySelectorAll(".github-button");
         for (var i = 0; i < x.length; i++) {
@@ -13,15 +12,12 @@
                     template += "<span id='github-action'>"+ resp["stargazers_count"] +"<img id='github-star' src='./img/star.png'></span>";
                     template = "<a id='github-repo' href = 'https://github.com/"+$(x[i]).attr('href')+"' target='_blank'>"+template+"</a>";
                     $(x[i]).html(template);
-                    data = resp["stargazers_count"];
-                    console.log(resp);
                 },
                 error: function () {}
             });
         }
     }
     );
-    
 </script>
 
 <div class="mainstage">
@@ -60,7 +56,7 @@
         <div class="github-button" href="Extreme-classification/deepxml" data-action="stargazers" data-text="DeepXML">DeepXML</div>
         <div class="github-button" href="Extreme-classification/DECAF" data-action="stargazers" data-text="DECAF">DECAF</div>
         <div class="github-button" href="Extreme-classification/ECLARE" data-action="stargazers" data-text="ECLARE">ECLARE</div>
-        <div class="github-button" href="Extreme-classification/MUFIN" data-action="stargazers" data-text="ECLARE">MUFIN</div>
+        <div class="github-button" href="Extreme-classification/MUFIN" data-action="stargazers" data-text="MUFIN">MUFIN</div>
     </div>
     <div id="org_logos">
         <div class="img_logos_organization square">
