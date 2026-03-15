@@ -1,34 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Anshul Mittal</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script>
-        $(window).on('load', function () {
-            $("#left").load('./html/nav.html');
-            $("#center").load('./html/aboutme.html');
-            $("#right").load('./html/news.html');
-        });        
-    </script>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
-
 <body>
-    <div id='body'>
-        <div class="content" id="top">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-inner">
+        <div class="profile-photo">
+            <img src="https://avatars2.githubusercontent.com/u/16190005?s=400&u=b0" alt="Anshul Mittal">
         </div>
-        <div class="content" id="left">
+        <h1 class="sidebar-name">Anshul Mittal</h1>
+        <p class="sidebar-title">Senior Data &amp; Applied Scientist</p>
+        <p class="sidebar-affiliation">Microsoft</p>
+
+        <nav class="sidebar-nav">
+            <a href="#about">Who Am I?</a>
+            <hr class="nav-divider">
+            <a href="#publications">Publications</a>
+            <hr class="nav-divider">
+            <!-- <a href="#research-notes">Research Notes</a> -->
+            <!-- <hr class="nav-divider"> -->
+            <!-- <a href="#patents">Patents</a> -->
+            <!-- <hr class="nav-divider"> -->
+            <!-- <a href="./docs/Resume_Anshul_Mittal.pdf" target="_blank">CV</a> -->
+            <!-- <hr class="nav-divider"> -->
+        </nav>
+
+        <div class="sidebar-links">
+            <a href="https://github.com/anshumitts/" target="_blank" title="GitHub">
+                <img src="./img/GitHub-Mark-120px-plus.png" alt="GitHub">
+            </a>
+            <a href="https://scholar.google.co.in/citations?user=8TDNQMQAAAAJ&hl=en" target="_blank" title="Google Scholar">
+                <img src="./img/google-scholar-icon-1.png" alt="Google Scholar">
+            </a>
+            <a href="https://www.linkedin.com/in/anshumitts/" target="_blank" title="LinkedIn">
+                <img src="./img/linkedin.jpeg" alt="LinkedIn">
+            </a>
+            <a href="mailto:anshulmittal@microsoft.com" title="Email">
+                <img src="./img/email.png" alt="Email">
+            </a>
         </div>
-        <div class="content" id="center">
+
+        <div class="sidebar-contact">
+            <a href="mailto:anshulmittal@microsoft.com">anshulmittal@microsoft.com</a>
         </div>
-        <div class="content" id="right">
-        </div>
-        <div class="content" id="bottom">
+
+        <div class="sidebar-news">
+            <h3>News</h3>
+            <ul id="news-list"></ul>
         </div>
     </div>
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+
+    <!-- About -->
+    <section id="about">
+        <h2>Who Am I?</h2>
+        <div class="about-text">
+            <p>
+                I am a Senior Data and Applied Scientist at <a href="https://www.microsoft.com" target="_blank">Microsoft</a>, building efficient large-scale retrieval models that serve billions of queries. My work spans information retrieval, computational linguistics, and computer vision.
+            </p>
+            <p>
+                I earned my Ph.D. from
+                <a href="https://www.iitd.ac.in/" target="_blank">IIT Delhi</a> in 2024 as a
+                <a href="https://ai.google/research/outreach/phd-fellowship/recipients/?category=2019" target="_blank">Google Ph.D. Fellow</a>,
+                advised by
+                <a href="http://manikvarma.org/" target="_blank">Dr. Manik Varma</a> and
+                <a href="http://web.iitd.ac.in/~sumeet/" target="_blank">Dr. Sumeet Agarwal</a>.
+                During my Ph.D., I also spent time at
+                <a href="https://research.google/locations/india/" target="_blank">Google Research India</a>
+                and <a href="https://www.microsoft.com/en-us/research/" target="_blank">Microsoft Research</a>. Previously, I completed my M.S. (Research) from IIT Delhi and my B.Tech from
+                <a href="https://www.iitr.ac.in/" target="_blank">IIT Roorkee</a>, where I also worked on Intelligent Transportation Systems at
+                <a href="https://www.iitm.ac.in/" target="_blank">IIT Madras</a> with
+                <a href="https://civil.iitm.ac.in/faculty/gitakrishnan/" target="_blank">Dr. Gitakrishnan Ramadurai</a>.
+            </p>
+            <p><strong>Research interests:</strong> information retrieval, large-scale training, efficient retrieval models, computer vision, computational linguistics, extreme classification.</p>
+            <p><strong>Beyond work:</strong> I enjoy classical music and opera, reading about quantum physics (the more I read, the less I understand), following space exploration efforts, and staying active through boxing, trekking, and coding side projects.</p>
+        </div>
+
+        <div class="education">
+            <h3>Education</h3>
+            <ul>
+                <li>
+                    <strong>Ph.D.</strong>, School of Information Technology, IIT Delhi, 2024
+                    <br><span class="edu-detail">Advisors: Dr. Manik Varma &amp; Dr. Sumeet Agarwal &middot; Google Ph.D. Fellow 2019</span>
+                </li>
+                <li>
+                    <strong>M.S. (Research)</strong>, IIT Delhi
+                </li>
+                <li>
+                    <strong>B.Tech</strong>, Civil Engineering (Minor: Computer Science), IIT Roorkee
+                </li>
+            </ul>
+        </div>
+
+        <div class="affiliations">
+            <img src="./img/IITR.png" alt="IIT Roorkee" title="IIT Roorkee">
+            <img src="./img/exl.jpg" alt="EXL Analytics" title="EXL Analytics">
+            <img src="./img/iitd.jpg" alt="IIT Delhi" title="IIT Delhi">
+            <img src="./img/googleReseach.png" alt="Google Research" title="Google Research">
+            <img src="./img/google_phd_fellow.png" alt="Google PhD Fellow" title="Google PhD Fellow">
+            <img src="./img/microsoft.svg" alt="Microsoft" title="Microsoft">
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <h2>Publications</h2>
+        <div id="publications-list"></div>
+    </section>
+
+    <!-- Research Notes (hidden for now)
+    <section id="research-notes">
+        <h2>Research Notes</h2>
+        <div id="research-notes-list"></div>
+    </section>
+    -->
+
+    <!-- Patents (hidden for now)
+    <section id="patents">
+        <h2>Patents</h2>
+        <div id="patents-list"></div>
+    </section>
+    -->
+
+</main>
+
+<script src="./js/main.js"></script>
 </body>
 </html>
