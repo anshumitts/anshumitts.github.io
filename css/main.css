@@ -2,8 +2,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-    --sidebar-w: 260px;
-    --max-content: 780px;
+    --sidebar-w: 280px;
+    --max-content: 820px;
     --c-bg: #ffffff;
     --c-sidebar: #f7f7f8;
     --c-border: #e0e0e0;
@@ -17,20 +17,45 @@
 }
 
 html { font-size: 15px; scroll-behavior: smooth; }
-body { font-family: var(--font-main); color: var(--c-text); background: var(--c-bg); line-height: 1.65; }
+body {
+    font-family: var(--font-main); color: var(--c-text); line-height: 1.65;
+    /* Dark techy AI background */
+    background-color: #0b1a2e;
+    background-image:
+        radial-gradient(ellipse at 15% 50%, rgba(26,82,118,0.28) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(16,65,115,0.22) 0%, transparent 50%),
+        radial-gradient(ellipse at 55% 85%, rgba(26,82,118,0.18) 0%, transparent 50%),
+        radial-gradient(circle, rgba(100,180,255,0.07) 1px, transparent 1px),
+        radial-gradient(circle, rgba(100,180,255,0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 16px 16px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 8px 8px;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
 a { color: var(--c-link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
+/* ── Page Wrapper ── */
+.page-wrapper {
+    display: flex;
+    max-width: 1120px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 0 60px rgba(0,0,0,0.25);
+}
+
 /* ── Sidebar ── */
 .sidebar {
-    position: fixed; top: 0; left: 0;
-    width: var(--sidebar-w); height: 100vh;
+    position: sticky; top: 0;
+    width: var(--sidebar-w); flex-shrink: 0;
+    height: 100vh;
     background: var(--c-sidebar);
     border-right: 1px solid var(--c-border);
     overflow-y: auto;
     z-index: 10;
 }
-.sidebar-inner { padding: 2rem 1.25rem; text-align: center; }
+.sidebar-inner { padding: 2rem 1.5rem; text-align: center; }
 
 .profile-photo { width: 130px; height: 130px; margin: 0 auto 1rem; }
 .profile-photo img {
@@ -84,9 +109,10 @@ a:hover { text-decoration: underline; }
 
 /* ── Main Content ── */
 .main-content {
-    margin-left: var(--sidebar-w);
+    flex: 1;
+    min-width: 0;
     max-width: var(--max-content);
-    padding: 2.5rem 2.5rem 4rem;
+    padding: 2.5rem 3rem 4rem;
 }
 
 section { margin-bottom: 3rem; }
@@ -170,12 +196,101 @@ section h2 {
 .note-details summary:hover { text-decoration: underline; }
 .note-body { font-size: 0.88rem; line-height: 1.6; text-align: justify; color: var(--c-text); }
 
+/* ── Mobile Header ── */
+.mobile-header {
+    display: none;
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 54px; z-index: 20;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--c-border);
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.mobile-header-name { font-size: 1.1rem; font-weight: 700; color: var(--c-text); }
+
+/* Hamburger */
+.hamburger {
+    background: none; border: none; cursor: pointer;
+    width: 36px; height: 36px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 5px;
+    padding: 6px;
+    -webkit-tap-highlight-color: transparent;
+}
+.hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--c-text); border-radius: 2px;
+    transition: transform 0.25s, opacity 0.2s;
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Overlay for mobile menu */
+.sidebar-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 9;
+}
+
 /* ── Responsive ── */
 @media (max-width: 860px) {
-    .sidebar { position: relative; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--c-border); }
-    .sidebar-inner { padding: 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
-    .profile-photo { width: 80px; height: 80px; margin: 0; }
-    .sidebar-name, .sidebar-title, .sidebar-affiliation { text-align: left; }
-    .sidebar-nav { flex-direction: row; flex-wrap: wrap; gap: 0.25rem; }
-    .main-content { margin-left: 0; padding: 1.5rem 1rem 3rem; }
+    .page-wrapper {
+        display: block;
+        max-width: 100%;
+        box-shadow: none;
+        background: var(--c-bg);
+    }
+
+    .mobile-header { display: flex; }
+
+    .sidebar {
+        position: fixed; top: 54px; left: 0; bottom: 0;
+        width: 280px; height: auto;
+        border-right: 1px solid var(--c-border);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 10;
+    }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-overlay.open { display: block; }
+
+    .sidebar-inner { padding: 1.5rem 1.25rem; display: block; text-align: center; }
+    .profile-photo { width: 90px; height: 90px; margin: 0 auto 0.75rem; }
+
+    .sidebar-nav { flex-direction: column; gap: 0.15rem; }
+    .sidebar-nav a { padding: 0.65rem 0.75rem; font-size: 1rem; min-height: 44px; display: flex; align-items: center; }
+
+    .sidebar-links a { width: 36px; height: 36px; }
+
+    .main-content {
+        margin-left: 0;
+        margin-right: auto;
+        padding: 1.25rem 1rem 3rem;
+        margin-top: 54px;
+    }
+
+    section h2 { font-size: 1.2rem; }
+
+    .about-text p { text-align: left; font-size: 0.95rem; }
+
+    .affiliations { justify-content: center; gap: 0.75rem; }
+    .affiliations img { height: 36px; max-width: 75px; }
+
+    .pub-entry { padding: 0.65rem 0; }
+    .pub-title { font-size: 0.92rem; }
+    .pub-links a { padding: 0.3rem 0.6rem; font-size: 0.78rem; min-height: 36px; display: inline-flex; align-items: center; }
+
+    .note-header { flex-direction: column; gap: 0.15rem; }
+    .note-date { margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+    .main-content { padding: 1rem 0.75rem 2.5rem; }
+    .profile-photo { width: 70px; height: 70px; }
+    .sidebar-name { font-size: 1.05rem; }
+    .affiliations img { height: 30px; max-width: 60px; }
+    .education li { font-size: 0.9rem; }
+    .pub-authors, .pub-venue { font-size: 0.8rem; }
 }

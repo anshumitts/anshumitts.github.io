@@ -10,8 +10,8 @@ All dynamic content is loaded from **TSV files** in `data/` via vanilla JavaScri
 ### File Structure
 
 ```
-index.html              ← Single-page layout (sidebar + main content)
-css/main.css            ← All styling (do NOT change font family or color scheme)
+index.html              ← Single-page layout (mobile header + page wrapper + sidebar + main content)
+css/main.css            ← All styling (responsive: desktop centered card + mobile hamburger drawer)
 js/main.js              ← TSV loader and renderers (no dependencies, no jQuery)
 data/
   publications.tsv      ← Publication entries
@@ -122,8 +122,13 @@ date	title	summary	content
 
 - **Font**: System font stack (`-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, ...`)
 - **Color scheme**: `--c-accent: #1a5276` (dark blue), `--c-bg: #ffffff`, `--c-sidebar: #f7f7f8`
-- **Layout**: Fixed sidebar (260px) + scrollable main content (max 780px)
-- **Responsive**: Sidebar collapses to top bar below 860px
+- **Background**: Dark navy-blue AI-themed background (`#0b1a2e`) with radial gradient glows and a subtle dot-grid overlay, fixed behind the page
+- **Layout**: Centered `.page-wrapper` card (max-width 1120px) with sticky sidebar (280px) + scrollable main content (max 820px), using flexbox
+- **Responsive**:
+  - **Desktop (>860px)**: Sidebar is sticky inside the centered card; content floats over the dark background
+  - **Mobile (<=860px)**: Full-width white layout with a fixed top header bar and hamburger menu; sidebar slides in as a drawer overlay
+  - **Small phones (<=480px)**: Further reduced padding, image sizes, and font sizes
+- **Mobile menu**: Hamburger button in `.mobile-header` toggles `.sidebar.open` and `.sidebar-overlay.open` via inline `<script>` at bottom of `index.html`
 - **No external dependencies**: No jQuery, no frameworks, no CDNs
 - All images use `position: static` and `display: block` — do not add `position: absolute`
 

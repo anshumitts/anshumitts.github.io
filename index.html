@@ -8,8 +8,19 @@
 </head>
 <body>
 
+<!-- Mobile Header -->
+<header class="mobile-header">
+    <span class="mobile-header-name">Anshul Mittal</span>
+    <button class="hamburger" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
+</header>
+
+<!-- Page Wrapper -->
+<div class="page-wrapper">
+
 <!-- Sidebar -->
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
     <div class="sidebar-inner">
         <div class="profile-photo">
             <img src="https://avatars2.githubusercontent.com/u/16190005?s=400&u=b0" alt="Anshul Mittal">
@@ -133,6 +144,36 @@
 
 </main>
 
+</div><!-- /.page-wrapper -->
+
 <script src="./js/main.js"></script>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<script>
+// This file was modified using Github Copilot.
+(function() {
+    var toggle = document.getElementById('menu-toggle');
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('sidebar-overlay');
+    function openMenu() {
+        sidebar.classList.add('open');
+        overlay.classList.add('open');
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+    toggle.addEventListener('click', function() {
+        sidebar.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', closeMenu);
+    sidebar.querySelectorAll('.sidebar-nav a').forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+    });
+})();
+</script>
 </body>
 </html>
