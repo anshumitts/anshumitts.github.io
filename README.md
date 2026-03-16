@@ -191,3 +191,146 @@ Then open `http://localhost:8765`
 | `docs/Resume_Anshul_Mittal.pdf` | CV PDF |
 
 **Do not add jQuery, external CSS, or framework files.** Keep the site dependency-free.
+
+---
+
+### Database Reference
+
+All website content is stored in **tab-separated (TSV)** files under `data/`.
+Each file has a header row defining the columns, followed by one row per entry.
+Fields are separated by **literal tab characters** — do not use spaces.
+Empty fields must still have their surrounding tab separators (e.g., `value1\t\tvalue3`).
+
+> **AI RULE**: Whenever you add, remove, or modify any entry in a TSV database file,
+> you **must** also update the corresponding **Database Stats** section at the bottom
+> of this README to keep the entry count and table in sync.
+
+---
+
+#### 1. Publications — `data/publications.tsv`
+
+**Purpose**: Academic papers, preprints, and technical reports displayed in the Publications section on the website.
+Rendered by `renderPublications()` in `js/main.js`. Auto-sorted by year (newest first).
+
+**Schema** (7 columns):
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| `title` | Yes | Full paper title in title case |
+| `authors` | Yes | Comma-separated author list, format: `A. Mittal, K. Dahiya` |
+| `venue` | Yes | Short venue name: `CVPR`, `WSDM`, `WWW`, `ICML`, `arXiv`, `JVCIR`, etc. |
+| `year` | Yes | 4-digit publication year |
+| `pdf_url` | No | Full URL to the paper PDF or landing page |
+| `code_url` | No | Full URL to the code repository |
+| `video_url` | No | Full URL to a talk/demo video |
+
+**Example row** (tabs shown as `→`):
+```
+My Paper Title→A. Mittal, B. Coauthor→ICML→2026→https://arxiv.org/abs/1234.56789→→
+```
+
+---
+
+#### 2. News — `data/news.tsv`
+
+**Purpose**: Announcements and milestones displayed in the sidebar "News" section.
+Rendered by `renderNews()` in `js/main.js`. Auto-sorted by date (newest first).
+
+**Schema** (3 columns):
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| `date` | Yes | Format: `Mon YYYY` (e.g., `Sep 2025`) or just `YYYY` (e.g., `2023`) |
+| `text` | Yes | Short announcement text (one line) |
+| `highlight` | Yes | `1` = highlighted (blue background), `0` = normal |
+
+**Example row**:
+```
+Jun 2026→Paper accepted at NeurIPS 2026→1
+```
+
+---
+
+#### 3. Patents — `data/patents.tsv` *(section currently hidden)*
+
+**Purpose**: Patent filings and grants. Currently not rendered on the website.
+To enable: uncomment the Patents `<section>` in `index.html` and `renderPatents()` in `js/main.js`.
+
+**Schema** (7 columns):
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| `title` | Yes | Patent title |
+| `inventors` | Yes | Comma-separated inventor names |
+| `patent_number` | Yes | Patent application number (e.g., `US-2025-XXXXXX`) |
+| `status` | Yes | `Filed`, `Published`, or `Granted` |
+| `year` | Yes | 4-digit year |
+| `abstract` | No | One-paragraph description of the invention |
+| `citation` | No | Formal citation string |
+
+---
+
+#### 4. Research Notes — `data/research_notes.tsv` *(section currently hidden)*
+
+**Purpose**: Blog-style posts about research and engineering work. Currently not rendered.
+To enable: uncomment the Research Notes `<section>` in `index.html` and `renderResearchNotes()` in `js/main.js`.
+
+**Schema** (4 columns):
+
+| Column | Required | Description |
+|--------|----------|-------------|
+| `date` | Yes | Format: `Mon YYYY` (e.g., `Mar 2026`) |
+| `title` | Yes | Post title |
+| `summary` | Yes | One-line preview shown in the collapsed view |
+| `content` | Yes | Full body text. Use `\n` for line breaks within the field |
+
+---
+
+### Database Stats
+
+> **Keep this section up to date.** When any TSV file is modified, update the counts and tables below.
+> Last updated: **March 2026**
+
+#### Publications (`data/publications.tsv`) — 14 entries
+
+| # | Title | Venue | Year |
+|---|-------|-------|------|
+| 1 | Graph Regularized Encoder Training for Extreme Classification | WWW | 2025 |
+| 2 | MOGIC: Metadata-infused Oracle Guidance for Improved Extreme Classification | ICML | 2025 |
+| 3 | NGAME: Negative Mining-aware Mini-batching for Extreme Classification | WSDM | 2023 |
+| 4 | EHI: End-to-end Learning of Hierarchical Index for Efficient Dense Retrieval | arXiv | 2024 |
+| 5 | Multi-Modal Extreme Classification | CVPR | 2022 |
+| 6 | ECLARE: Extreme Classification with Label Graph Correlations | WWW | 2021 |
+| 7 | DECAF: Deep Extreme Classification with Label Features | WSDM | 2021 |
+| 8 | DeepXML: A Deep Extreme Multi-Label Learning Framework Applied to Short Text Documents | WSDM | 2021 |
+| 9 | OAK: Enriching Document Representations using Auxiliary Knowledge for Extreme Classification | ICML | 2024 |
+| 10 | A Modified LSTM Model for Continuous Sign Language Recognition Using Leap Motion | IEEE Sensors Journal | 2019 |
+| 11 | Sub-scene Target Detection and Recognition Using Deep Learning CNNs | ICDSMLA | 2020 |
+| 12 | Data Extraction from Traffic Videos Using Machine Learning Approach | SocProS | 2018 |
+| 13 | The Extreme Classification Repository: Multi-label Datasets and Code | Technical Report | 2017 |
+| 14 | Rotation and Script Independent Text Detection from Video Frames Using Sub Pixel Mapping | JVCIR | 2017 |
+
+#### News (`data/news.tsv`) — 7 entries
+
+| # | Date | Text | Highlighted |
+|---|------|------|-------------|
+| 1 | Sep 2025 | Promoted to Senior Data and Applied Scientist at Microsoft | Yes |
+| 2 | Oct 2024 | Completed Ph.D. from IIT Delhi | Yes |
+| 3 | 2024 | Joined Microsoft | Yes |
+| 4 | 2023 | Completed Synopsis | No |
+| 5 | 2023 | Ph.D. intern at Microsoft Research | No |
+| 6 | 2022 | 1 accepted publication in CVPR 2022 | No |
+| 7 | 2022 | Ph.D. intern at Google Research | No |
+
+#### Patents (`data/patents.tsv`) — 2 entries *(hidden)*
+
+| # | Title | Status | Year |
+|---|-------|--------|------|
+| 1 | Scalable multi-modal feature fusion for large-scale recommendation systems | Filed | 2025 |
+| 2 | Adaptive tokenization framework for multilingual query understanding | Filed | 2024 |
+
+#### Research Notes (`data/research_notes.tsv`) — 1 entry *(hidden)*
+
+| # | Date | Title |
+|---|------|-------|
+| 1 | Mar 2026 | Scaling Tokenization for Multilingual Ad Queries |
