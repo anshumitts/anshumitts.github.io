@@ -176,6 +176,41 @@ Then open `http://localhost:8765`
 
 ---
 
+### Deploying to GitHub Pages
+
+This site is hosted at **https://anshumitts.github.io** via the repo
+**https://github.com/anshumitts/anshumitts.github.io**.
+
+Since this folder lives inside the AdsMCP repo, you cannot push directly.
+Use the following steps to deploy:
+
+1. **Clone the GitHub Pages repo** to a temp directory:
+   ```bash
+   git clone https://github.com/anshumitts/anshumitts.github.io.git /tmp/site-deploy
+   ```
+
+2. **Copy all files** (excluding `.git`) from this folder into the clone:
+   ```bash
+   cp -r anshumitts.github.io-master/* /tmp/site-deploy/
+   ```
+
+3. **Commit and push**:
+   ```bash
+   cd /tmp/site-deploy
+   git add -A
+   git commit -m "docs: describe your changes here"
+   git push origin master
+   ```
+
+4. **Clean up** the temp directory:
+   ```bash
+   rm -rf /tmp/site-deploy
+   ```
+
+The site updates automatically within a few minutes after pushing to `master`.
+
+---
+
 ### Files in Use
 
 | File | Purpose |
