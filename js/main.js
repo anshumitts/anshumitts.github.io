@@ -78,8 +78,6 @@ async function renderPatents() {
         return '<div class="patent-entry">' +
             '<div class="patent-title">' + escapeHTML(pat.title) + '</div>' +
             '<div class="patent-meta">' + escapeHTML(pat.inventors) + ' &middot; ' + escapeHTML(pat.patent_number) + ' &middot; ' + escapeHTML(pat.status) + ' (' + escapeHTML(pat.year) + ')</div>' +
-            '<div class="patent-abstract">' + escapeHTML(pat.abstract) + '</div>' +
-            '<div class="patent-citation">' + escapeHTML(pat.citation) + '</div>' +
             '</div>';
     }).join('');
 }
@@ -89,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderNews();
     renderPublications();
     // renderResearchNotes();
-    // renderPatents();
+    renderPatents();
 });
 
 /**

@@ -16,7 +16,7 @@ js/main.js              ← TSV loader and renderers (no dependencies, no jQuery
 data/
   publications.tsv      ← Publication entries
   news.tsv              ← News/announcements (rendered in sidebar)
-  patents.tsv           ← Patent entries (currently hidden)
+  patents.tsv           ← Patent entries
   research_notes.tsv    ← Blog/research notes (currently hidden)
 docs/
   Resume_Anshul_Mittal.pdf
@@ -92,9 +92,7 @@ title	inventors	patent_number	status	year	abstract	citation
 - `abstract` — One-paragraph description
 - `citation` — Formal citation string
 
-**Currently hidden.** To enable:
-1. In `index.html`: uncomment the Patents `<section>` block and its `<a>` nav link
-2. In `js/main.js`: uncomment `renderPatents();`
+**Currently enabled.** The Patents section and nav link are active.
 
 ---
 
@@ -220,7 +218,7 @@ The site updates automatically within a few minutes after pushing to `master`.
 | `js/main.js` | TSV loading + rendering |
 | `data/publications.tsv` | Publications database |
 | `data/news.tsv` | News database |
-| `data/patents.tsv` | Patents database (hidden) |
+| `data/patents.tsv` | Patents database |
 | `data/research_notes.tsv` | Blog posts database (hidden) |
 | `img/*` | Logo/icon assets |
 | `docs/Resume_Anshul_Mittal.pdf` | CV PDF |
@@ -286,10 +284,10 @@ Jun 2026→Paper accepted at NeurIPS 2026→1
 
 ---
 
-#### 3. Patents — `data/patents.tsv` *(section currently hidden)*
+#### 3. Patents — `data/patents.tsv`
 
-**Purpose**: Patent filings and grants. Currently not rendered on the website.
-To enable: uncomment the Patents `<section>` in `index.html` and `renderPatents()` in `js/main.js`.
+**Purpose**: Patent filings and grants. Rendered in the Patents section on the website.
+Rendered by `renderPatents()` in `js/main.js`. Auto-sorted by year (newest first).
 
 **Schema** (7 columns):
 
@@ -324,7 +322,7 @@ To enable: uncomment the Research Notes `<section>` in `index.html` and `renderR
 ### Database Stats
 
 > **Keep this section up to date.** When any TSV file is modified, update the counts and tables below.
-> Last updated: **March 2026**
+> Last updated: **April 2026**
 
 #### Publications (`data/publications.tsv`) — 14 entries
 
@@ -357,12 +355,12 @@ To enable: uncomment the Research Notes `<section>` in `index.html` and `renderR
 | 6 | 2022 | 1 accepted publication in CVPR 2022 | No |
 | 7 | 2022 | Ph.D. intern at Google Research | No |
 
-#### Patents (`data/patents.tsv`) — 2 entries *(hidden)*
+#### Patents (`data/patents.tsv`) — 2 entries
 
 | # | Title | Status | Year |
 |---|-------|--------|------|
-| 1 | Scalable multi-modal feature fusion for large-scale recommendation systems | Filed | 2025 |
-| 2 | Adaptive tokenization framework for multilingual query understanding | Filed | 2024 |
+| 1 | Leveraging Token Relationships for Enhancing Token Embeddings | Pending | 2025 |
+| 2 | TREAT: Tokenization for Retrieving Entity-Aware Targets | Pending | 2025 |
 
 #### Research Notes (`data/research_notes.tsv`) — 1 entry *(hidden)*
 
